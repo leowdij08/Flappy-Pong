@@ -221,13 +221,14 @@ function watchRacketBounce() {
 // ==========================================
 function wallAdder() {
   if (millis() - lastAddTime > wallInterval) {
-    let randHeight = round(random(minGapHeight, maxGapHeight));
-    let randY = round(random(0, height - randHeight));
+    let gapHeight = 250; // tinggi gap tetap
+    let randY = round(random(0, height - gapHeight));
     let col = color(random(50,255), random(50,255), random(50,255));
-    walls.push(new Wall(width, randY, wallWidth, randHeight, col));
+    walls.push(new Wall(width, randY, wallWidth, gapHeight, col));
     lastAddTime = millis();
   }
 }
+
 
 function wallHandler() {
   for (let i = walls.length - 1; i >= 0; i--) {
