@@ -221,7 +221,7 @@ function watchRacketBounce() {
 // ==========================================
 function wallAdder() {
   if (millis() - lastAddTime > wallInterval) {
-    let gapHeight = 250; // tinggi gap tetap
+    let gapHeight = 250; 
     let randY = round(random(0, height - gapHeight));
     let col = color(random(50,255), random(50,255), random(50,255));
     walls.push(new Wall(width, randY, wallWidth, gapHeight, col));
